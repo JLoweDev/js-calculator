@@ -1,3 +1,26 @@
-#container {
-    display: grid;
+
+.grid-container {
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto auto;
+    width: 800px;
+    background-color: aqua;
+    grid-gap: 10px;
+    padding: 10px;
+    margin: auto;
+}
+
+.grid-item {
+    background-color: rgba(223, 57, 57, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+div#display {
+    grid-column: 1 / 6;
+}
+
+div#zero {
+    grid-column: 1 / 4;
 }
