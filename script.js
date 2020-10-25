@@ -1,23 +1,36 @@
-function operate(x, y) {
+let operator = 'subtract';
 
+function operate(x, y) {
+    switch(operator) {
+        case 'add':
+            return add(x, y);
+            break;
+        case 'subtract':
+            return subtract(x, y);
+            break;
+        case 'multiply':
+            return multiply(x, y);
+            break;
+        case 'divide':
+            return divide(x, y);
+            break;
+        default:
+            console.log('Something went wrong')
+    }
 }
 
 function add(x, y) {
-    let result = x + y;
-    return result;
+    return x + y;
 }
 
 function subtract(x, y) {
-    let result = x - y;
-    return result;
+    return x - y;
 }
 
 function multiply(x, y) {
-    let result = x * y;
-    return result;
+    return x * y;
 }
 
 function divide(x, y) {
-    let result = x / y;
-    return result;
+    return x / y;
 }
