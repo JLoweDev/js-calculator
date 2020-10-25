@@ -1,24 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
 body {
     display: flex;
     flex-direction: column;
     width: 99vw;
+    height: 70vh;
     justify-content: center;
     align-items: center;
-    background-color: lightgoldenrodyellow;
+    background-color: lightgray;
+    font-family: 'Roboto', sans-serif;
 }
 
 .grid-container {
     display: inline-grid;
     grid-template-columns: auto auto auto auto auto;
     width: 800px;
-    background-color: aqua;
+    background-color: lightslategray;
     grid-gap: 10px;
     padding: 10px;
     margin: auto;
+    border-radius: 5px;
 }
 
 .grid-item {
-    background-color: rgba(223, 57, 57, 0.8);
+    background-color: rgb(139, 139, 139);
+    color: rgb(29, 29, 29);
     border: 1px solid rgba(0, 0, 0, 0.8);
     height: 60px;
     font-size: 30px;
@@ -29,6 +35,8 @@ body {
 
 div#display {
     grid-column: 1 / 6;
+    background-color: black;
+    color: lightgray;
 }
 
 div#zero {
