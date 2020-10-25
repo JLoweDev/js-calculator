@@ -42,3 +42,11 @@ div#display {
 div#zero {
     grid-column: 1 / 4;
 }
+
+div#ac {
+    background-color: darkorange;
+}
+
+div#back {
+    background-color: darkorange;
+}
