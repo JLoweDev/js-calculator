@@ -1,3 +1,11 @@
+body {
+    display: flex;
+    flex-direction: column;
+    width: 99vw;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgoldenrodyellow;
+}
 
 .grid-container {
     display: inline-grid;
@@ -12,9 +20,11 @@
 .grid-item {
     background-color: rgba(223, 57, 57, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
+    height: 60px;
     font-size: 30px;
     text-align: center;
+    border-radius: 5px;
+    padding-top: 25px;
 }
 
 div#display {
