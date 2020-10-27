@@ -31,13 +31,22 @@ for (let i = 0; i < operatorButtons.length; i++) {
 
 function processNumber(e) {
     const number = Number(e.target.value);
-    console.log(number);
+    displayNumber(number);
 }
 
 // Function for processing operator
 
 function processOperator() {
+    if (firstNumber && secondNumber) {
+        resNumber = operate(firstNumber, operator, secondNumber);
 
+    }
+}
+
+// Function to display number
+
+function displayNumber(intNumber) {
+    displayPlate.innerHTML = intNumber;
 }
 
 // Function to operate
