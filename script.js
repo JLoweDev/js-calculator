@@ -13,7 +13,7 @@ const equalsButton = document.querySelector('#equals');
 let firstNumber = '';
 let operator = '';
 let secondNumber = '';
-let resNumber = '';
+let saveNumber = '';
 
 // Adding listeners to number buttons 
 
@@ -24,24 +24,43 @@ for (let i = 0; i < numberButtons.length; i++) {
 // Adding listeners to operator buttons
 
 for (let i = 0; i < operatorButtons.length; i++) {
-    operatorButtons[i].addEventListener('click', processOperator)
-}
+    operatorButtons[i].addEventListener('click', function () {
+        operator = operatorButtons[i].value;
+        if (firstNumber && secondNumber) {
+            saveNumber = operate(+firstNumber, operator, +secondNumber);
+            if (saveNumber % 1 != 0) {
+                saveNumber = saveNumber.toFixed(3);
+              }
+            displayNumber(saveNumber);
+            firstNumber = saveNumber;
+            secondNumber = '';
+        }
+        })
+    };
+
 
 // Function for processing number input
 
 function processNumber(e) {
     const number = Number(e.target.value);
-    displayNumber(number);
+    if (firstNumber && operator && secondNumber.length < 13) {
+        createNumber(number);
+        displayNumber(secondNumber);
+      } else if (firstNumber.length < 13) {
+        createNumber(number);
+        displayNumber(firstNumber);
+      }
 }
 
-// Function for processing operator
+// Function to create numbers
 
-function processOperator() {
-    if (firstNumber && secondNumber) {
-        resNumber = operate(firstNumber, operator, secondNumber);
-
-    }
-}
+function createNumber(number) {
+	if (firstNumber && operator) {
+		secondNumber += number;
+	} else {
+		firstNumber += number;
+	}
+};
 
 // Function to display number
 
