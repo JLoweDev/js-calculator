@@ -60,6 +60,24 @@ clearButton.addEventListener('click', function() {
     displayPlate.innerHTML = '';
 })
 
+// Function for decimal sign
+
+decimalButton.addEventListener('click', function() {
+    decimal = decimalButton.value;
+    if (displayPlate.innerHTML == '') {
+        return
+    } else if (displayPlate.innerHTML.includes('.')) {
+        return
+    } else {
+        createNumber(decimal);
+        if (secondNumber) {
+            displayNumber(secondNumber);
+        } else {
+            displayNumber(firstNumber);
+        }
+    }
+})
+
 // Function for equals sign
 
 equalsButton.addEventListener('click', function() {
@@ -72,7 +90,6 @@ equalsButton.addEventListener('click', function() {
     }
     displayPlate.innerHTML = tot;
     firstNumber = tot;
-    //secondNumber = '';
 })
 
 
