@@ -25,18 +25,54 @@ for (let i = 0; i < numberButtons.length; i++) {
 
 for (let i = 0; i < operatorButtons.length; i++) {
     operatorButtons[i].addEventListener('click', function () {
-        operator = operatorButtons[i].value;
-        if (firstNumber && secondNumber) {
-            saveNumber = operate(+firstNumber, operator, +secondNumber);
-            if (saveNumber % 1 != 0) {
-                saveNumber = saveNumber.toFixed(3);
-              }
-            displayNumber(saveNumber);
-            firstNumber = saveNumber;
-            secondNumber = '';
+        useOperator();
+        if (!firstNumber) {
+            return
+        } else {
+            operator = operatorButtons[i].value;
         }
-        })
-    };
+    })
+};
+
+// Function to use operator
+
+function useOperator () {
+    if (firstNumber && secondNumber) {
+        saveNumber = operate(+firstNumber, operator, +secondNumber);
+        if (saveNumber % 1 != 0) {
+            saveNumber = saveNumber.toFixed(3);
+        }
+        displayNumber(saveNumber);
+        firstNumber = saveNumber;
+        secondNumber = '';
+    }
+}
+
+// Function for AC button
+
+clearButton.addEventListener('click', function() {
+    firstNumber = '';
+    secondNumber = '';
+    saveNumber = '';
+    tot = '';
+    operator = '';
+    displayPlate.innerHTML = '';
+})
+
+// Function for equals sign
+
+equalsButton.addEventListener('click', function() {
+    let tot = operate(+firstNumber, operator, +secondNumber);
+    if (!secondNumber) {
+        return
+    }
+    if (tot % 1 != 0) {
+        tot = tot.toFixed(3);
+    }
+    displayPlate.innerHTML = tot;
+    firstNumber = tot;
+    secondNumber = '';
+})
 
 
 // Function for processing number input
