@@ -25,12 +25,13 @@ for (let i = 0; i < numberButtons.length; i++) {
 
 for (let i = 0; i < operatorButtons.length; i++) {
     operatorButtons[i].addEventListener('click', function () {
-        useOperator();
         if (!firstNumber) {
             return
         } else {
             operator = operatorButtons[i].value;
         }
+        secondNumber = '';
+        useOperator();
     })
 };
 
@@ -71,7 +72,7 @@ equalsButton.addEventListener('click', function() {
     }
     displayPlate.innerHTML = tot;
     firstNumber = tot;
-    secondNumber = '';
+    //secondNumber = '';
 })
 
 
