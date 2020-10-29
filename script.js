@@ -49,6 +49,26 @@ function useOperator () {
     }
 }
 
+// Function for back button
+
+backspaceButton.addEventListener('click', function() {
+    if (secondNumber) {
+        strNumber = secondNumber.toString();
+        strChars = strNumber.split('')
+        strChars.pop();
+        strNumber = strChars.join('');
+        secondNumber = Number(strNumber);
+        displayNumber(secondNumber);
+    } else {
+        strNumber = firstNumber.toString();
+        strChars = strNumber.split('')
+        strChars.pop();
+        strNumber = strChars.join('');
+        firstNumber = Number(strNumber);
+        displayNumber(firstNumber);
+    }
+});
+
 // Function for AC button
 
 clearButton.addEventListener('click', function() {
