@@ -156,7 +156,11 @@ function operate(x, operator, y) {
             return multiply(x, y);
             break;
         case 'divide':
+            if (secondNumber == 0) {
+                alert('Never divide by 0');
+            } else {
             return divide(x, y);
+            }
             break;
         default:
             console.log('Something went wrong')
